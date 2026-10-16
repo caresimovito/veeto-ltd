@@ -85,15 +85,27 @@
     }
 
     .mark {
-      width: 2rem;
-      height: 2rem;
-      display: grid;
-      place-items: center;
-      background: var(--accent);
-      color: var(--dark);
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.04em;
+      width: 2.35rem;
+      height: 2.35rem;
+      border-radius: 0.35rem;
+      object-fit: cover;
+      display: block;
+      flex-shrink: 0;
+    }
+
+    .brand-text {
+      display: inline-flex;
+      flex-direction: column;
+      gap: 0.1rem;
+      line-height: 1.1;
+    }
+
+    .brand-text small {
+      color: rgba(244, 241, 234, 0.55);
+      font-size: 0.62rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
     }
 
     nav {
@@ -135,7 +147,23 @@
 
     .hero-inner {
       position: relative;
-      padding: 5.5rem 0 4.25rem;
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(12rem, 0.85fr);
+      gap: 2rem 3rem;
+      align-items: center;
+      padding: 4.5rem 0 3.75rem;
+    }
+
+    .hero-copy {
+      min-width: 0;
+    }
+
+    .hero-logo {
+      justify-self: end;
+      width: min(100%, 22rem);
+      height: auto;
+      display: block;
+      filter: drop-shadow(0 18px 40px rgba(0, 0, 0, 0.45));
     }
 
     .eyebrow {
@@ -415,8 +443,24 @@
       }
 
       .mark {
-        width: 1.7rem;
-        height: 1.7rem;
+        width: 1.85rem;
+        height: 1.85rem;
+      }
+
+      .hero-inner {
+        grid-template-columns: 1fr;
+        padding: 3.25rem 0 2.75rem;
+        gap: 1.75rem;
+      }
+
+      .hero-logo {
+        justify-self: start;
+        width: min(100%, 16rem);
+      }
+
+      h1 {
+        max-width: none;
+        font-size: clamp(3rem, 14vw, 4.5rem);
       }
 
       nav {
@@ -456,8 +500,11 @@
   <header>
     <div class="wrap bar">
       <a class="brand" href="#top">
-        <span class="mark" aria-hidden="true">VL</span>
-        VEETO LTD
+        <img class="mark" src="assets/veeto-ltd-badge.png" width="64" height="70" alt="">
+        <span class="brand-text">
+          VEETO LTD
+          <small>IT · Cloud · Games · Creator</small>
+        </span>
       </a>
       <nav aria-label="Page">
         <a href="#services">Services</a>
@@ -470,15 +517,18 @@
   <main id="top">
     <section class="hero" aria-labelledby="company-name">
       <div class="wrap hero-inner">
-        <p class="eyebrow">Cardiff, United Kingdom</p>
-        <h1 id="company-name">VEETO LTD</h1>
-        <p class="lede">IT consulting, cloud and infrastructure engineering, game development, and content creation.</p>
-        <ul class="pills">
-          <li>IT consulting</li>
-          <li>Cloud and infrastructure</li>
-          <li>Game development</li>
-          <li>Content creation</li>
-        </ul>
+        <div class="hero-copy">
+          <p class="eyebrow">Cardiff, United Kingdom</p>
+          <h1 id="company-name">VEETO LTD</h1>
+          <p class="lede">IT consulting, cloud and infrastructure engineering, game development, and content creation.</p>
+          <ul class="pills">
+            <li>IT consulting</li>
+            <li>Cloud and infrastructure</li>
+            <li>Game development</li>
+            <li>Content creation</li>
+          </ul>
+        </div>
+        <img class="hero-logo" src="assets/veeto-ltd-badge.png" width="640" height="700" alt="VEETO LTD logo: IT, cloud, game development, and content creation">
       </div>
     </section>
 
